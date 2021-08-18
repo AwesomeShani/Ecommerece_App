@@ -1,25 +1,19 @@
 import React from 'react';
 import {Text, View, StyleSheet} from 'react-native';
-import Icon from 'react-native-vector-icons';
 import {TextInput} from 'react-native-gesture-handler';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import defaultStyles from '../config/Styles';
 function AppTextInput({icon, width = '100%', ...otherProps}) {
   return (
     <View style={[styles.contaner, {width}]}>
       {icon && (
-        <Icon
+        <MaterialCommunityIcons
           name={icon}
           size={20}
           color={defaultStyles.colors.mediumgrey}
           style={styles.icon}
         />
-        // <MaterialCommunityIcons
-        //   name={icon}
-        //   size={20}
-        //   color={defaultStyles.colors.mediumgrey}
-        //   style={styles.icon}
-        // />
       )}
       <TextInput
         placeholderTextColor={defaultStyles.colors.mediumgrey}

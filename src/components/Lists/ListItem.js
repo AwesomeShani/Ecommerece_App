@@ -2,7 +2,7 @@ import React from 'react';
 import {View, StyleSheet, Image, TouchableHighlight} from 'react-native';
 import colors from '../../config/colors';
 import AppText from '../AppText/AppText';
-import Icon from 'react-native-vector-icons';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {Swipeable} from 'react-native-gesture-handler';
 
 function ListItem({
@@ -25,12 +25,12 @@ function ListItem({
             </AppText>
             {subtitle && <AppText style={styles.subtitle}>{subtitle}</AppText>}
           </View>
-          <Icon color={colors.mediumgrey} name="chevron-right" size={23} />
-          {/* <MaterialCommunityIcons
+
+          <MaterialCommunityIcons
             color={colors.mediumgrey}
             name="chevron-right"
             size={23}
-          /> */}
+          />
         </View>
       </TouchableHighlight>
     </Swipeable>

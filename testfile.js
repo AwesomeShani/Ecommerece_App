@@ -1,12 +1,12 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import {Icon} from 'react-native-vector-icons/FontAwesome';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export default function Testfile() {
   return (
     <View style={styles.container}>
       <Text>Hello World!!</Text>
-      <Icon name="trash-can-outline" size={30} color="#900" />
+      <MaterialCommunityIcons name="account" size={40} color="black" />
     </View>
   );
 }

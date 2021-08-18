@@ -7,7 +7,7 @@ import {
   Button,
   FlatList,
 } from 'react-native';
-import Icon from 'react-native-vector-icons';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import AppText from './AppText/AppText';
 import defaultStyles from '../config/Styles';
@@ -31,30 +31,23 @@ function AppPicker({
       <TouchableWithoutFeedback onPress={() => setModalVisible(true)}>
         <View style={[styles.container, {width}]}>
           {icon && (
-            <Icon
+            <MaterialCommunityIcons
               name={icon}
               size={20}
               color={defaultStyles.colors.mediumgrey}
               style={styles.icon}
             />
-            // <MaterialCommunityIcons
-            //   name={icon}
-            //   size={20}
-            //   color={defaultStyles.colors.mediumgrey}
-            //   style={styles.icon}
-            // />
           )}
           {selectedItem ? (
             <AppText style={styles.text}>{selectedItem.label}</AppText>
           ) : (
             <AppText>{placeholder}</AppText>
           )}
-          <Icon name={icon} size={20} color={defaultStyles.colors.mediumgrey} />
-          {/* <MaterialCommunityIcons
+          <MaterialCommunityIcons
             name="chevron-down"
             size={20}
             color={defaultStyles.colors.mediumgrey}
-          /> */}
+          />
         </View>
       </TouchableWithoutFeedback>
       <Modal visible={modalVisible} animationType="slide">

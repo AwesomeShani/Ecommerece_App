@@ -1,6 +1,6 @@
 import React from 'react';
 import {Image, StyleSheet, View} from 'react-native';
-import Icon from 'react-native-vector-icons';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import colors from '../config/colors';
 
@@ -8,16 +8,14 @@ function ViewImageScreen(props) {
   return (
     <View style={[styles.Container]}>
       <View style={styles.CloseIcon}>
-        <Icon name="close" color="white" size={35} />
-        {/* <MaterialCommunityIcons name="close" color="white" size={35} /> */}
+        <MaterialCommunityIcons name="close" color="white" size={35} />
       </View>
       <View style={styles.DeleteIcon}>
-        <Icon name="trash-can-outline" size={35} color="white" />
-        {/* <MaterialCommunityIcons
+        <MaterialCommunityIcons
           name="trash-can-outline"
           color="white"
           size={35}
-        /> */}
+        />
       </View>
       <Image
         style={styles.Image}

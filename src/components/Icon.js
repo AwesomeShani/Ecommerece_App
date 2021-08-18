@@ -1,5 +1,6 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {View} from 'react-native';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import colors from '../config/colors';
 function Icon({
@@ -18,8 +19,7 @@ function Icon({
         justifyContent: 'center',
         alignItems: 'center',
       }}>
-      {/* <Icon name={name} color={iconColor} size={size * 0.5} /> */}
-      {/* <MaterialCommunityIcons name={name} color={iconColor} size={size * 0.5} /> */}
+      <MaterialCommunityIcons name={name} color={iconColor} size={size * 0.5} />
     </View>
   );
 }

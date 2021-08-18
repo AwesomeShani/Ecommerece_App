@@ -1,18 +1,17 @@
 import React from 'react';
 import {View, StyleSheet, TouchableOpacity} from 'react-native';
 import colors from '../config/colors';
-import Icon from 'react-native-vector-icons';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 function NewListingButton({onPress}) {
   return (
     <TouchableOpacity onPress={onPress}>
       <View style={styles.container}>
-        <Icon name="plus-circle" color={colors.white} size={40} />
-        {/* <MaterialCommunityIcons
+        <MaterialCommunityIcons
           name="plus-circle"
           color={colors.white}
           size={40}
-        /> */}
+        />
       </View>
     </TouchableOpacity>
   );

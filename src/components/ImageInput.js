@@ -7,7 +7,7 @@ import {
   Alert,
 } from 'react-native';
 import colors from '../config/colors';
-import Icon from 'react-native-vector-icons';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 // import * as ImagePicker from 'expo-image-picker';
 
 function ImageInput({imageUri, onChangeImage}) {
@@ -47,12 +47,11 @@ function ImageInput({imageUri, onChangeImage}) {
     <TouchableWithoutFeedback>
       <View style={styles.container}>
         {!imageUri && (
-          <Icon name="camera" size={30} color={colors.mediumgrey} />
-          // <MaterialCommunityIcons
-          //   name="camera"
-          //   size={30}
-          //   color={colors.mediumgrey}
-          // />
+          <MaterialCommunityIcons
+            name="camera"
+            size={30}
+            color={colors.mediumgrey}
+          />
         )}
         {imageUri && <Image source={{uri: imageUri}} style={styles.image} />}
       </View>
