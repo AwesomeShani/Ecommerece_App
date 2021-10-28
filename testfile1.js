@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   View,
   StyleSheet,
@@ -10,42 +10,28 @@ import colors from '../config/colors';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import ImagePicker from 'react-native-image-crop-picker';
 
-function ImageInput({imageUri, onChangeImage}) {
-  const handlePress = () => {
-    if (!imageUri) selectImage();
-    else {
-      Alert.alert('Delete', 'Do you want to delete the Image?', [
-        {text: 'Yes', onPress: () => onChangeImage(null)},
-        {text: 'No'},
-      ]);
-    }
-  };
-
-  const selectImage = () => {
-    try {
-      ImagePicker.openPicker({
-        width: 300,
-        height: 400,
-        cropping: true,
-        mediaType: 'image',
-        multiple: false,
-      }).then(image => {
-        console.log(image);
-        if (image.path !== null) onChangeImage(image.path);
-      });
-    } catch (error) {
-      console.log('Error reading image', error);
-    }
-  };
+function ImageInput({imageUri, setImageUri, selectImage}) {
+  // const selectImage = () => {
+  //   ImagePicker.openPicker({
+  //     width: 300,
+  //     height: 400,
+  //     cropping: true,
+  //     mediaType: 'image',
+  //     multiple: true,
+  //   }).then(image => {
+  //     console.log(image);
+  //     // setImageUri(image.path);
+  //   });
+  // };
 
   return (
-    <TouchableWithoutFeedback onPress={handlePress} style={styles.touchable}>
+    <TouchableWithoutFeedback onPress={selectImage} style={styles.touchable}>
       <View style={styles.container}>
         {!imageUri && (
           <MaterialCommunityIcons
+            color={colors.mediumgrey}
             name="camera"
             size={40}
-            color={colors.mediumgrey}
           />
         )}
         {imageUri && <Image source={{uri: imageUri}} style={styles.image} />}

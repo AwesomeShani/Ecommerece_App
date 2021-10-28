@@ -12,6 +12,8 @@ target 'Ecommerece_App' do
     :hermes_enabled => false
   )
 
+  pod 'react-native-image-picker', :path => '../node_modules/react-native-image-picker'
+
   target 'Ecommerece_AppTests' do
     inherit! :complete
     # Pods for testing
